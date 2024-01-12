@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --myfont: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--myfont);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: var(--black);
+}
+
+/* ---------------------
+    NAVBAR
+------------------- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li > a {
+    display: block;
+    position: relative;
+    padding: 2rem 1.5rem 1rem 1.5rem;
+    color: var(--white);
+
+}
+
+/* efecto subrayado */
+nav ul li .link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.2rem;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background-color: var(--white);
+}
+
+nav ul li .link:hover:before {
+  transform: scaleX(1);
+}
+
+nav .more{
+    display: none;
+}
+
+nav .menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-width: 20rem;
+  background-color: var(--white);
+  display: none;
+}
+
+nav .menu a{
+    padding: 1rem;
+    color: var(--black);
+}
+
+nav .menu a:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+nav .mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1132px) {
+    nav .link-hide {
+        display: none;
+    }
+
+    nav .more{
+        display: block;
+    }
+}
+@media screen and (max-width: 640px) {
+    nav ul {
+        display: none;
+    }
+
+    nav .mobile{
+        display: block;
+    }
+}
