@@ -34,6 +34,10 @@ body {
     NAVBAR
 ------------------- */
 
+.show {
+  display: flex !important;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -75,11 +79,12 @@ nav .more {
 }
 
 nav .menu {
+  background-color: var(--white);
   position: absolute;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   min-width: 20rem;
-  background-color: var(--white);
   display: none;
 }
 
@@ -120,7 +125,7 @@ nav .mobile .header #bmenu {
 }
 
 nav .mobile .links {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: relative;
   z-index: 100;
