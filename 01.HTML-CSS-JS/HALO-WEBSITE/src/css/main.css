@@ -46,11 +46,10 @@ nav ul {
 }
 
 nav ul li > a {
-    display: block;
-    position: relative;
-    padding: 2rem 1.5rem 1rem 1.5rem;
-    color: var(--white);
-
+  display: block;
+  position: relative;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  color: var(--white);
 }
 
 /* efecto subrayado */
@@ -71,8 +70,8 @@ nav ul li .link:hover:before {
   transform: scaleX(1);
 }
 
-nav .more{
-    display: none;
+nav .more {
+  display: none;
 }
 
 nav .menu {
@@ -84,35 +83,81 @@ nav .menu {
   display: none;
 }
 
-nav .menu a{
-    padding: 1rem;
-    color: var(--black);
+nav .menu a {
+  padding: 1rem;
+  color: var(--black);
 }
 
-nav .menu a:hover{
-    background-color: var(--black);
-    color: var(--white);
+nav .menu a:hover {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 nav .mobile {
   display: none;
+  width: 100%;
+}
+
+nav .mobile .header {
+  background-color: var(--black);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav .mobile .header a{
+ color: var(--white);
+ display: inline-flex;
+ padding: 1rem;
+}
+
+nav .mobile .header #bmenu {
+    background: transparent;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+nav .mobile .links {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 100;
+}
+
+nav .mobile .links a {
+  font-size: 2rem;
+  display: block;
+  padding: 1rem 2rem;
+
+  color: var(--white);
+}
+
+nav .mobile .links a:hover {
+  background-color: var(--white);
+  color: var(--black);
 }
 
 @media screen and (max-width: 1132px) {
-    nav .link-hide {
-        display: none;
-    }
+  nav .link-hide {
+    display: none;
+  }
 
-    nav .more{
-        display: block;
-    }
+  nav .more {
+    display: flex;
+  }
 }
 @media screen and (max-width: 640px) {
-    nav ul {
-        display: none;
-    }
+  nav {
+    width: 100%;
+    padding: 0;
+  }
+  nav ul {
+    display: none;
+  }
 
-    nav .mobile{
-        display: block;
-    }
+  nav .mobile {
+    display: block;
+  }
 }
