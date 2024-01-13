@@ -294,11 +294,6 @@ h3 {
   background-color: var(--greyhover);
 }
 
-
-
-
-
-
 #videos #slider #current {
   width: 1080px;
   margin: 3rem auto;
@@ -359,6 +354,31 @@ h3 {
   justify-content: center;
   align-items: center;
   z-index: 100;
+}
+
+/* ---------------
+    MULTIPLAYER
+-------------------*/
+
+#multiplayer{
+  height: 100vh;
+  background-image: url(../img/bg-multiplayer.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.info{
+  line-height: 1.2;
+  padding: 4rem;
+  width: 600px;
+  margin-right: 5rem;
+}
+
+.info p{
+  font-size: 2rem;
 }
 
 /* ---------------
