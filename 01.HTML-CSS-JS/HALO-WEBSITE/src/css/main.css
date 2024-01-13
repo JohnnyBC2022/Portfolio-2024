@@ -19,12 +19,12 @@ html {
 
 :root {
   --black: #000;
-  --blackOpacity: rgba(0,0,0,0.5);
+  --blackOpacity: rgba(0, 0, 0, 0.5);
   --white: #fff;
-  --grey: rgb(58,58,58);
-  --greyhover: rbg(37,37,37);
+  --grey: rgb(58, 58, 58);
+  --greyhover: rbg(37, 37, 37);
   --greenbtn: #adfa2f;
-  --greenbtnhover: rgb(138,207,33);
+  --greenbtnhover: rgb(138, 207, 33);
   --blue: #00c3ff;
   --myfont: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
@@ -116,25 +116,25 @@ nav .mobile .header {
   flex-direction: row;
   justify-content: space-between;
 }
-nav .mobile .header a{
- color: var(--white);
- display: inline-flex;
- padding: 1rem;
+nav .mobile .header a {
+  color: var(--white);
+  display: inline-flex;
+  padding: 1rem;
 }
 
 nav .mobile .header #bmenu {
-    background: transparent;
-    color: var(--white);
-    border: none;
-    cursor: pointer;
-    padding: 1rem;
+  background: transparent;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
 }
 
 nav .mobile .links {
   display: none;
   flex-direction: column;
   position: relative;
-  z-index: 100;
+  z-index: 200;
   background-color: var(--black);
 }
 
@@ -155,19 +155,18 @@ nav .mobile .links a:hover {
     HEADER
 -------------------*/
 
-header{
+header {
   background-image: url(../img/halo-infinite-cover-darkmode.jpg);
   background-size: cover;
   background-position: center 0;
   background-repeat: no-repeat;
   height: 100vh;
-  
 }
 
 /* ---------------
     BANNER
 -------------------*/
-h2{
+h2 {
   font-size: 3.5rem;
   position: relative;
   display: inline-block;
@@ -175,8 +174,8 @@ h2{
   margin: 0;
   margin-bottom: 4rem;
 }
-h2::before{
-  content: '';
+h2::before {
+  content: "";
   position: absolute;
   width: 100%;
   height: 3rem;
@@ -200,7 +199,7 @@ h2::before{
   color: var(--white);
 }
 
-.green-button{
+.green-button {
   border: 0;
   display: inline-flex;
   align-items: center;
@@ -210,10 +209,9 @@ h2::before{
   color: var(--black);
   background-color: var(--greenbtn);
   text-transform: uppercase;
-
 }
 
-.green-link{
+.green-link {
   border: 0;
   display: inline-flex;
   position: relative;
@@ -222,10 +220,9 @@ h2::before{
   text-transform: uppercase;
   padding: 1rem 4rem;
   color: var(--greenbtn);
-  
 }
 
-.green-link::before{
+.green-link::before {
   content: "";
   position: absolute;
   display: block;
@@ -238,11 +235,11 @@ h2::before{
   background-color: var(--greenbtn);
 }
 
-.green-link:hover::before{
+.green-link:hover::before {
   transform: scale(0.6);
 }
 
-.green-button:hover{
+.green-button:hover {
   background-color: var(--greenbtnhover);
 }
 
@@ -250,20 +247,20 @@ h2::before{
     VIDEOS
 -------------------*/
 
-.w-75{
+.w-75 {
   width: 75%;
   margin: 0 auto;
 }
 
-h3{
+h3 {
   font-size: 1.6em;
   padding-top: 5rem;
   color: var(--white);
 }
 /* trucazo: si con photoshop u otra herramienta, le reduce la opacidad a una imagen en png cuando en el css apliques un bg-color, tendrá una opacidad con ese color, eso te permite por ejemplo aplicar un background negro para el dark mode y un background blanco para el light mode usando la misma imagen ahorrando recursos*/
-#videos{
+#videos {
   text-align: center;
-  padding:5rem 0;
+  padding: 5rem 0;
 
   background-image: url(../img/bg-videos.png);
   background-position: bottom center;
@@ -273,12 +270,12 @@ h3{
   color: var(--white);
 }
 
-#videos #slider #controls{
+#videos #slider #controls {
   display: flex;
   justify-content: center;
 }
-#videos #slider #controls #prev, 
-#videos #slider #controls #next{
+#videos #slider #controls #prev,
+#videos #slider #controls #next {
   border: none;
   height: 5rem;
   width: 8rem;
@@ -288,20 +285,72 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
+  margin-top: 5rem;
 }
 
-#videos #slider #controls #prev:hover, 
-#videos #slider #controls #next:hover{
+#videos #slider #controls #prev:hover,
+#videos #slider #controls #next:hover {
   background-color: var(--greyhover);
 }
 
 #videos #slider #current {
   width: 1280px;
-  margin: 5rem auto;
+  margin: 3rem auto;
   border: solid 1px var(--blue);
 }
 
+#videos #slider #videos-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  overflow: auto;
+}
+
+#videos #slider #videos-container .item {
+  border: solid 1px var(--blue);
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 320px;
+  height: 180px;
+  position: relative;
+}
+
+#videos #slider #videos-container .item a {
+  position: relative;
+  min-width: 320px;
+  height: 180px;
+}
+
+#videos #slider #videos-container .item img {
+  object-fit: contain;
+  min-width: 320px;
+  height: 180px;
+  transition: opacity .3s ease;
+}
+#videos #slider #videos-container .item:hover img {
+  opacity: 0.6;
+}
+
+#videos #slider #videos-container .item::before{
+  font-family: "Material Icons";
+  font-size: 2.4rem;
+  content: "play_arrow";
+  color: var(--white);
+  position: absolute;
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 50px;
+  height: 50px;
+  background-color: var(--black);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
 
 /* ---------------
     MEDIA QUERIES
@@ -316,12 +365,11 @@ h3{
     display: flex;
   }
 
-  header{
+  header {
     height: 70vh;
   }
 
-
-  #banner{
+  #banner {
     position: initial;
     z-index: 100;
     width: 100%;
@@ -342,13 +390,13 @@ h3{
     display: block;
   }
 
-  header{
+  header {
     height: 40vh;
     max-width: 100%;
     background-position: center 4rem;
   }
 
- h2{
-  font-size: 2.5em;
- }
+  h2 {
+    font-size: 2.5em;
+  }
 }

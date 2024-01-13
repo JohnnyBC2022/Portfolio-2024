@@ -64,15 +64,24 @@ function renderCurrentVideo(id) {
 }
 
 function renderVideos() {
-    const html = videos.map(video => {
+    const html = videos.map((video, index) => {
         return `
         <div class="item">
-            <a href="#">
-                <img src="https://i3.ytimg.com/vi/${video.id}/hqdefault.jpg" />
+            <a href="#" data-id="${index}">
+                <img src="https://i3.ytimg.com/vi/${video.id}/mqdefault.jpg" />
             </a>
         </div>`;
-        
+
     });
     videosContainer.innerHTML = html.join("")
+
+    document.querySelectorAll(".item a").forEach((item) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = +item.getAttribute("data-id"); // con el operador + convertimos el string en un número
+            current = id;
+            renderCurrentVideo(videos[current].id);
+        })
+    })
 }
 
