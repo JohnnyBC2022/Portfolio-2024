@@ -277,8 +277,8 @@ h3{
   display: flex;
   justify-content: center;
 }
-#videos #slider #controls .prev, 
-#videos #slider #controls .next{
+#videos #slider #controls #prev, 
+#videos #slider #controls #next{
   border: none;
   height: 5rem;
   width: 8rem;
@@ -291,14 +291,14 @@ h3{
   transition: all .3s ease;
 }
 
-#videos #slider #controls .prev:hover, 
-#videos #slider #controls .next:hover{
+#videos #slider #controls #prev:hover, 
+#videos #slider #controls #next:hover{
   background-color: var(--greyhover);
 }
 
 #videos #slider #current {
   width: 1280px;
-  margin: 5rem 0;
+  margin: 5rem auto;
   border: solid 1px var(--blue);
 }
 
