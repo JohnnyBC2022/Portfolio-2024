@@ -360,7 +360,7 @@ h3 {
     MULTIPLAYER
 -------------------*/
 
-#multiplayer{
+#multiplayer {
   height: 100vh;
   background-image: url(../img/bg-multiplayer.jpeg);
   background-repeat: no-repeat;
@@ -370,14 +370,16 @@ h3 {
   justify-content: end;
 }
 
-.info{
+.info {
+  background-color: var(--blackOpacity);
+  color: var(--white);
   line-height: 1.2;
   padding: 4rem;
   width: 600px;
   margin-right: 5rem;
 }
 
-.info p{
+.info p {
   font-size: 2rem;
 }
 
@@ -413,7 +415,14 @@ h3 {
     height: 500px;
   }
 
-  
+  #multiplayer {
+    background-position: center left;
+  }
+
+  .info {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 700px) {
   nav {
@@ -446,6 +455,15 @@ h3 {
   }
 
   #videos #slider #videos-container {
-    display: none ;
+    display: none;
+  }
+
+  #multiplayer {
+    background-position: -400px 0px;
+  }
+
+  .info {
+    width: 70%;
+    margin: 0 auto;
   }
 }
