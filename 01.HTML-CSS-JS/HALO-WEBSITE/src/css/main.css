@@ -420,7 +420,7 @@ h3 {
 
 #get-the-game .item-store .right{
   text-align: left;
-  width: 100%;
+  width: 80%;
 }
 
 .right .green-button{
@@ -468,6 +468,18 @@ h3 {
     width: 80%;
     margin: 0 auto;
   }
+
+  #get-the-game .item-store .left{
+    width: 100%;
+  }
+  
+  #get-the-game .item-store .left img{
+    width: 400px;
+  }
+  #get-the-game .item-store .right{
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 700px) {
   nav {
@@ -509,6 +521,22 @@ h3 {
 
   .info {
     width: 70%;
+    margin: 0 auto;
+  }
+
+  #get-the-game .item-store{
+    flex-direction: column;    
+  }
+
+  #get-the-game .item-store .left{
+    width: 100%;
+  }
+  
+  #get-the-game .item-store .left img{
+    width: 300px;
+  }
+  #get-the-game .item-store .right{
+    width: 80%;
     margin: 0 auto;
   }
 }
