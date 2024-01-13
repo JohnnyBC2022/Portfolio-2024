@@ -20,9 +20,12 @@ html {
 :root {
   --black: #000;
   --blackOpacity: rgba(0,0,0,0.5);
+  --white: #fff;
+  --grey: rgb(58,58,58);
+  --greyhover: rbg(37,37,37);
   --greenbtn: #adfa2f;
   --greenbtnhover: rgb(138,207,33);
-  --white: #fff;
+  --blue: #00c3ff;
   --myfont: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
@@ -165,12 +168,12 @@ header{
     BANNER
 -------------------*/
 h2{
-  font-size: 2em;
+  font-size: 3.5rem;
   position: relative;
   display: inline-block;
   padding: 0;
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 h2::before{
   content: '';
@@ -195,10 +198,6 @@ h2::before{
   right: 100px;
   background-color: var(--blackOpacity);
   color: var(--white);
-}
-
-#banner p{
-  margin-top: 2rem;
 }
 
 .green-button{
@@ -246,6 +245,67 @@ h2::before{
 .green-button:hover{
   background-color: var(--greenbtnhover);
 }
+
+/* ---------------
+    VIDEOS
+-------------------*/
+
+.w-75{
+  width: 75%;
+  margin: 0 auto;
+}
+
+h3{
+  font-size: 1.6em;
+  padding-top: 5rem;
+  color: var(--white);
+}
+/* trucazo: si con photoshop u otra herramienta, le reduce la opacidad a una imagen en png cuando en el css apliques un bg-color, tendrá una opacidad con ese color, eso te permite por ejemplo aplicar un background negro para el dark mode y un background blanco para el light mode usando la misma imagen ahorrando recursos*/
+#videos{
+  text-align: center;
+  padding:5rem 0;
+
+  background-image: url(../img/bg-videos.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: var(--white);
+}
+
+#videos #slider #controls{
+  display: flex;
+  justify-content: center;
+}
+#videos #slider #controls .prev, 
+#videos #slider #controls .next{
+  border: none;
+  height: 5rem;
+  width: 8rem;
+  background-color: var(--grey);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+}
+
+#videos #slider #controls .prev:hover, 
+#videos #slider #controls .next:hover{
+  background-color: var(--greyhover);
+}
+
+#videos #slider #current {
+  width: 1280px;
+  margin: 5rem 0;
+  border: solid 1px var(--blue);
+}
+
+
+/* ---------------
+    MEDIA QUERIES
+-------------------*/
 
 @media screen and (max-width: 1200px) {
   nav .link-hide {
