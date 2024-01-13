@@ -22,7 +22,7 @@ html {
   --blackOpacity: rgba(0, 0, 0, 0.5);
   --white: #fff;
   --grey: rgb(58, 58, 58);
-  --greyhover: rbg(37, 37, 37);
+  --greyhover: rgb(37, 37, 37);
   --greenbtn: #adfa2f;
   --greenbtnhover: rgb(138, 207, 33);
   --blue: #00c3ff;
@@ -294,14 +294,23 @@ h3 {
   background-color: var(--greyhover);
 }
 
+
+
+
+
+
 #videos #slider #current {
-  width: 1280px;
+  width: 1080px;
   margin: 3rem auto;
-  border: solid 1px var(--blue);
+}
+
+#slider #current iframe {
+  height: 720px;
 }
 
 #videos #slider #videos-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   width: 100%;
@@ -327,21 +336,21 @@ h3 {
   object-fit: contain;
   min-width: 320px;
   height: 180px;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 #videos #slider #videos-container .item:hover img {
   opacity: 0.6;
 }
 
-#videos #slider #videos-container .item::before{
+#videos #slider #videos-container .item::before {
   font-family: "Material Icons";
   font-size: 2.4rem;
   content: "play_arrow";
   color: var(--white);
   position: absolute;
-  left: 50%; 
-  top: 50%; 
-  transform: translate(-50%, -50%); 
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
   background-color: var(--black);
@@ -376,6 +385,15 @@ h3 {
     padding: 0;
     margin-top: 4rem;
   }
+
+  #videos #slider #current {
+    width: 80%;
+  }
+  #slider #current iframe {
+    height: 500px;
+  }
+
+  
 }
 @media screen and (max-width: 700px) {
   nav {
@@ -398,5 +416,16 @@ h3 {
 
   h2 {
     font-size: 2.5em;
+  }
+
+  #videos #slider #current {
+    width: 90%;
+  }
+  #slider #current iframe {
+    height: 300px;
+  }
+
+  #videos #slider #videos-container {
+    display: none ;
   }
 }
