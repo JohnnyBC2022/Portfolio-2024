@@ -21,6 +21,8 @@ html {
   --black: #000;
   --blackOpacity: rgba(0, 0, 0, 0.5);
   --white: #fff;
+  --whiteOpacitylight: rgba(255,255,255,0.1);
+  --whiteOpacityhard: rgba(255,255,255,0.8);
   --grey: rgb(58, 58, 58);
   --greyhover: rgb(37, 37, 37);
   --greenbtn: #adfa2f;
