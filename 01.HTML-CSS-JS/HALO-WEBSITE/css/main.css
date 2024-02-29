@@ -1,0 +1,595 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --black: #000;
+  --blackOpacity: rgba(0, 0, 0, 0.5);
+  --white: #fff;
+  --whiteOpacitylight: rgba(255, 255, 255, 0.1);
+  --whiteOpacityhard: rgba(255, 255, 255, 0.8);
+  --grey: rgb(58, 58, 58);
+  --greyhover: rgb(37, 37, 37);
+  --greenbtn: #adfa2f;
+  --greenbtnhover: rgb(138, 207, 33);
+  --blue: #00c3ff;
+  --myfont: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--myfont);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: var(--black);
+}
+
+/* ---------------------
+    NAVBAR
+------------------- */
+
+.show {
+  display: flex !important;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li > a {
+  display: block;
+  position: relative;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  color: var(--white);
+}
+
+/* efecto subrayado */
+nav ul li .link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.2rem;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background-color: var(--white);
+}
+
+nav ul li .link:hover:before {
+  transform: scaleX(1);
+}
+
+nav .more {
+  display: none;
+}
+
+nav .menu {
+  background-color: var(--white);
+  position: absolute;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 20rem;
+  display: none;
+}
+
+nav .menu a {
+  padding: 1rem;
+  color: var(--black);
+}
+
+nav .menu a:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+nav .mobile {
+  display: none;
+  width: 100%;
+}
+
+nav .mobile .header {
+  background-color: var(--black);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav .mobile .header a {
+  color: var(--white);
+  display: inline-flex;
+  padding: 1rem;
+}
+
+nav .mobile .header #bmenu {
+  background: transparent;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+nav .mobile .links {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  z-index: 200;
+  background-color: var(--black);
+}
+
+nav .mobile .links a {
+  font-size: 2rem;
+  display: block;
+  padding: 1rem 2rem;
+
+  color: var(--white);
+}
+
+nav .mobile .links a:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* ---------------
+    HEADER
+-------------------*/
+
+header {
+  background-image: url(../img/halo-infinite-cover-darkmode.jpg);
+  background-size: cover;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* ---------------
+    BANNER
+-------------------*/
+h2 {
+  font-size: 3.5rem;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 4rem;
+}
+h2::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  bottom: -30px;
+  left: 0;
+
+  transform: scale(0.4) skewY(-20deg) rotate(20deg);
+  background-color: var(--greenbtn);
+}
+
+#banner {
+  font-size: 1.8em;
+  text-align: center;
+  padding: 4rem;
+  width: 400px;
+  position: absolute;
+  z-index: 100;
+  top: 200px;
+  right: 100px;
+  background-color: var(--blackOpacity);
+  color: var(--white);
+}
+
+.green-button {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem;
+  margin-top: 3rem;
+  color: var(--black);
+  background-color: var(--greenbtn);
+  text-transform: uppercase;
+}
+
+.green-link {
+  border: 0;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  padding: 1rem 4rem;
+  color: var(--greenbtn);
+}
+
+.green-link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.2rem;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background-color: var(--greenbtn);
+}
+
+.green-link:hover::before {
+  transform: scale(0.6);
+}
+
+.green-button:hover {
+  background-color: var(--greenbtnhover);
+}
+
+/* ---------------
+    VIDEOS
+-------------------*/
+
+.w-75 {
+  width: 75%;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 1.6em;
+  padding-top: 5rem;
+  color: var(--white);
+}
+/* trucazo: si con photoshop u otra herramienta, le reduce la opacidad a una imagen en png cuando en el css apliques un bg-color, tendrá una opacidad con ese color, eso te permite por ejemplo aplicar un background negro para el dark mode y un background blanco para el light mode usando la misma imagen ahorrando recursos*/
+#videos {
+  text-align: center;
+  padding: 5rem 0;
+
+  background-image: url(../img/bg-videos.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: var(--white);
+}
+
+#videos #slider #controls {
+  display: flex;
+  justify-content: center;
+}
+#videos #slider #controls #prev,
+#videos #slider #controls #next {
+  border: none;
+  height: 5rem;
+  width: 8rem;
+  background-color: var(--grey);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-top: 5rem;
+}
+
+#videos #slider #controls #prev:hover,
+#videos #slider #controls #next:hover {
+  background-color: var(--greyhover);
+}
+
+#videos #slider #current {
+  width: 1080px;
+  margin: 3rem auto;
+}
+
+#slider #current iframe {
+  height: 720px;
+}
+
+#videos #slider #videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  overflow: auto;
+}
+
+#videos #slider #videos-container .item {
+  border: solid 1px var(--blue);
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 320px;
+  height: 180px;
+  position: relative;
+}
+
+#videos #slider #videos-container .item a {
+  position: relative;
+  min-width: 320px;
+  height: 180px;
+}
+
+#videos #slider #videos-container .item img {
+  object-fit: contain;
+  min-width: 320px;
+  height: 180px;
+  transition: opacity 0.3s ease;
+}
+#videos #slider #videos-container .item:hover img {
+  opacity: 0.6;
+}
+
+#videos #slider #videos-container .item::before {
+  font-family: "Material Icons";
+  font-size: 2.4rem;
+  content: "play_arrow";
+  color: var(--white);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--black);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+/* ---------------
+    MULTIPLAYER
+-------------------*/
+
+#multiplayer {
+  height: 100vh;
+  background-image: url(../img/bg-multiplayer.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.info {
+  background-color: var(--blackOpacity);
+  color: var(--white);
+  line-height: 1.2;
+  padding: 4rem;
+  width: 600px;
+  margin-right: 5rem;
+}
+
+.info p {
+  font-size: 2rem;
+}
+
+/* ---------------
+    STORE
+-------------------*/
+
+#get-the-game {
+  text-align: center;
+  padding: 5rem 0;
+
+  color: var(--white);
+}
+
+#get-the-game h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+}
+
+#get-the-game .item-store {
+  width: 80%;
+  padding: 5rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+}
+
+#get-the-game .item-store .left {
+  width: 80%;
+}
+
+#get-the-game .item-store .left img {
+  width: 500px;
+}
+
+#get-the-game .item-store .right {
+  text-align: left;
+  width: 80%;
+}
+
+.right .green-button {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+/* ---------------
+    FOOTER
+-------------------*/
+
+footer .top {
+  height: 100vh;
+  background-image: url(../img/master-chief-darkmode.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer .bottom {
+  color: var(--white);
+  padding: 6rem;
+  font-size: 2rem;
+}
+
+footer .bottom ul {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* ---------------
+    MEDIA QUERIES
+-------------------*/
+
+@media screen and (max-width: 1200px) {
+  nav .link-hide {
+    display: none;
+  }
+
+  nav .more {
+    display: flex;
+  }
+
+  header {
+    height: 70vh;
+  }
+
+  #banner {
+    position: initial;
+    z-index: 100;
+    width: 100%;
+    padding: 0;
+    margin-top: 4rem;
+  }
+
+  #videos #slider #current {
+    width: 80%;
+  }
+  #slider #current iframe {
+    height: 500px;
+  }
+
+  #multiplayer {
+    background-position: center left;
+  }
+
+  .info {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #get-the-game .item-store .left {
+    width: 100%;
+  }
+
+  #get-the-game .item-store .left img {
+    width: 400px;
+  }
+  #get-the-game .item-store .right {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  footer .top {
+    height: 75vh;
+    background-position: center 0;
+  }
+
+  footer .bottom {
+    padding: 4rem;
+  }
+
+  footer .bottom ul {
+    gap: 4rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  nav {
+    width: 100%;
+    padding: 0;
+  }
+  nav ul {
+    display: none;
+  }
+
+  nav .mobile {
+    display: block;
+  }
+
+  header {
+    height: 40vh;
+    max-width: 100%;
+    background-position: center 4rem;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  #videos #slider #current {
+    width: 90%;
+  }
+  #slider #current iframe {
+    height: 300px;
+  }
+
+  #videos #slider #videos-container {
+    display: none;
+  }
+
+  #multiplayer {
+    background-position: -400px 0px;
+  }
+
+  .info {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  #get-the-game .item-store {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  #get-the-game .item-store .left {
+    width: 100%;
+  }
+
+  #get-the-game .item-store .left img {
+    width: 300px;
+  }
+  #get-the-game .item-store .right {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  footer .top {
+    height: 50vh;
+    background-position: center 0;
+  }
+
+  footer .bottom {
+    padding: 3rem;
+    font-size: 1.7rem;
+  }
+
+  footer .bottom ul {
+    gap: 2rem;
+  }
+}
