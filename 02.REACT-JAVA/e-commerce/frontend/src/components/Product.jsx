@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -44,8 +44,8 @@ export default function Product() {
       <CardMedia
         component="img"
         height="194"
-        image="https:s2.r29static.com/bin/entry/ebd/0,675,2000,1050/x,80/1929471/image.jpg"
-        alt="Paella dish"
+        image="https://s2.r29static.com/bin/entry/ebd/0,675,2000,1050/x,80/1929471/image.jpg"
+        alt="Shoes"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -59,7 +59,7 @@ export default function Product() {
         {Array(3)
           .fill()
           .map((_, i) => (
-            <p>&#11088;</p>
+            <p key={i}>&#11088;</p>
           ))}
         <ExpandMore
           expand={expanded}
@@ -72,7 +72,9 @@ export default function Product() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Zapatillas de deporte para correr si no tienes dinero para gasolina</Typography>
+          <Typography paragraph>
+            Zapatillas de deporte para correr si no tienes dinero para gasolina
+          </Typography>
         </CardContent>
       </Collapse>
     </Card>
