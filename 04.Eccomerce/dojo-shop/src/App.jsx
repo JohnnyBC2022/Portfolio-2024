@@ -1,15 +1,16 @@
-import './App.css'
-import Navigation from './customer/components/navigation/Navigation'
-
+import "./App.css";
+import Navigation from "./customer/components/Navigation/Navigation";
+import { HomePage } from "./customer/pages/HomePage/HomePage";
 
 function App() {
-
   return (
     <>
       <Navigation />
-      <div>home</div>
+      <div>
+        <HomePage />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
