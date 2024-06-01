@@ -9,8 +9,8 @@ export default function RandomColor() {
     return Math.floor(Math.random() * length);
   }
 
-  function handleCreateRandomHexColor(params) {
-    const hex = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+  function handleCreateRandomHexColor() {
+    const hex = [0,1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
     let hexColor = "#";
 
     for (let i = 0; i < 6; i++) {
@@ -19,7 +19,7 @@ export default function RandomColor() {
 
     setColor(hexColor);
   }
-  function handleCreateRandomRgbColor(params) {
+  function handleCreateRandomRgbColor() {
     const r = randomColorUtility(256);
     const g = randomColorUtility(256);
     const b = randomColorUtility(256);
