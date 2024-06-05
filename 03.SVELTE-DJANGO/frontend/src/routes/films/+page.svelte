@@ -10,6 +10,15 @@
       FilmStore.set(data);
     }
   });
+
+  let handleDelete = (id) => {
+    const endpoint = `http://localhost:8000/api/films/${id}`;
+    fetch(endpoint,  {method: 'DELETE'}).then(response => {
+      if (response.status == 204) {
+        FilmStore.update(prev => prev.filter(film => film.id !=id))
+      }
+    })
+  }
 </script>
 
 <div>
@@ -34,6 +43,7 @@
             </div>
             <div>
               <a href="/films/{film.id}" class="btn btn-primary">View</a>
+              <button on:click={()=>handleDelete(film.id)} class="btn btn-danger ml-2">Delete</button>
             </div>
           </div>
         </div>
