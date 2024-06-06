@@ -2,6 +2,7 @@ import "./App.css";
 import Accordian from "./components/accordian/Index";
 import ImageSlider from "./components/image-slider";
 import LoadMoreData from "./components/load-more-data/Index";
+import QRCodeGenerator from "./components/qr-code-generator/Index";
 import RandomColor from "./components/random-color/Index";
 import StarRating from "./components/star-rating/Index";
 import TreeView from "./components/tree-view/Index";
@@ -25,7 +26,8 @@ function App() {
       {/* Load more products component*/}
      {/*  <LoadMoreData /> */}
       {/* Tree view component/menu UI component /recursive navigation menu */}
-      <TreeView menus={menus}/>
+      {/* <TreeView menus={menus}/> */}
+      <QRCodeGenerator />
     </>
   );
 }

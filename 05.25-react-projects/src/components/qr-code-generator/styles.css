@@ -1,0 +1,13 @@
+.qr-code-generator-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightblue;
+    padding: 100px 0;
+}
+
+.qr-code-generator-input{
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
